@@ -13,7 +13,7 @@ public class DayTimeController : MonoBehaviour
     [SerializeField] Color dayLightColor = Color.white;
 
     float time;
-    [SerializeField] float timeScale = 60f;
+    [SerializeField] float timeScale = 12f;
     [SerializeField] Text text;
     [SerializeField] Light2D globalLight;
     private int days;
