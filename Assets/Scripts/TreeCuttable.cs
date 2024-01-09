@@ -9,7 +9,7 @@ public class TreeCuttable : ToolHit
     [SerializeField] float spread = 0.7f;
     public override void Hit()
     {
-        while(dropCount > 0)
+        while (dropCount > 0)
         {
             dropCount -= 1;
             Vector3 position = transform.position;

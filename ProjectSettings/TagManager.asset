@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Hill
+  - Brigde
+  - Player
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Water
+    uniqueID: 2483701029
+    locked: 0
+  - name: Ground
+    uniqueID: 4029815051
+    locked: 0
+  - name: Foreground
+    uniqueID: 1599211209
+    locked: 0
+  - name: Hill
+    uniqueID: 2673212033
     locked: 0

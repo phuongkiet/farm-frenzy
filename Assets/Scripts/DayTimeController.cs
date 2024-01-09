@@ -13,7 +13,7 @@ public class DayTimeController : MonoBehaviour
     [SerializeField] Color dayLightColor = Color.white;
 
     float time;
-    [SerializeField] float timeScale = 12f;
+    [SerializeField] float timeScale = 60f;
     [SerializeField] Text text;
     [SerializeField] Light2D globalLight;
     private int days;
@@ -37,11 +37,12 @@ public class DayTimeController : MonoBehaviour
         float v = nightTimeCurve.Evaluate(Hours);
         Color c = Color.Lerp(dayLightColor, nightLightColor, v);
         globalLight.color = c;
-        if(time > secondsInDay)
+        if (time > secondsInDay)
         {
             NextDay();
         }
     }
+
 
     private void NextDay()
     {

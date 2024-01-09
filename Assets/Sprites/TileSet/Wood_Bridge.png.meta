@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +121,299 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Wood_Bridge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70387bcaec62f1846b27dea48dca6dde
+      internalID: -1589211741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c9250f3c0e2d64882d6120f8d59497
+      internalID: 761317951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: 6}
+        - {x: 1, y: 7}
+        - {x: 8, y: 7}
+        - {x: 8, y: 6}
+      - - {x: 1, y: -7}
+        - {x: 1, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: -7}
+      - - {x: -5, y: 6}
+        - {x: -5, y: 8}
+        - {x: -3, y: 8}
+        - {x: -3, y: 6}
+      - - {x: -5, y: -6}
+        - {x: -5, y: -4}
+        - {x: -3, y: -4}
+        - {x: -3, y: -6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484dd5b9e7bef544fac06a5e943bc81a
+      internalID: -28483392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 6}
+        - {x: -8, y: 7}
+        - {x: 8, y: 7}
+        - {x: 8, y: 6}
+      - - {x: -8, y: -7}
+        - {x: -8, y: -6}
+        - {x: 8, y: -6}
+        - {x: 8, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118b4b08fc683254babc0515887ac6b9
+      internalID: 2052092869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2, y: 6}
+        - {x: 2, y: 8}
+        - {x: 4, y: 8}
+        - {x: 4, y: 6}
+      - - {x: 2, y: -6}
+        - {x: 2, y: -4}
+        - {x: 4, y: -4}
+        - {x: 4, y: -6}
+      - - {x: -8, y: -7}
+        - {x: -8, y: -6}
+        - {x: -1, y: -6}
+        - {x: -1, y: -7}
+      - - {x: -8, y: 6}
+        - {x: -8, y: 7}
+        - {x: -1, y: 7}
+        - {x: -1, y: 6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba738f35f8a94e24582e9f02abcfec3b
+      internalID: -1164449957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c047ecf5cd8a8ab4f99805a4a57f292f
+      internalID: -1318154615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996a0be5f3e59494f80d1e1ca4dbb848
+      internalID: 1043809875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23d348f262705a45b35112ccb84fcec
+      internalID: -189226386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b297618ad55c9084f85f89ed393d1aa5
+      internalID: -698943982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2c249163f4df44bab5baecf685dccd
+      internalID: 1456176771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc5c1cacf86402409d0e23acb9156ac
+      internalID: 774470201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_Bridge_11
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efe2326be995ea499ccf1b193b7d0dd
+      internalID: 1408794497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +424,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wood_Bridge_0: -1589211741
+      Wood_Bridge_1: 761317951
+      Wood_Bridge_10: 774470201
+      Wood_Bridge_11: 1408794497
+      Wood_Bridge_2: -28483392
+      Wood_Bridge_3: 2052092869
+      Wood_Bridge_4: -1164449957
+      Wood_Bridge_5: -1318154615
+      Wood_Bridge_6: 1043809875
+      Wood_Bridge_7: -189226386
+      Wood_Bridge_8: -698943982
+      Wood_Bridge_9: 1456176771
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
