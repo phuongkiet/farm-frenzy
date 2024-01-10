@@ -16,6 +16,16 @@ public class PickUpItem : MonoBehaviour
     {
         player = GameManager.Instance.player.transform;
     }
+
+    public void Set(Item item, int count)
+    {
+        this.item = item;
+        this.count = count;
+
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = item.icon;
+    }
+
     private void Update()
     {
         ttl -= Time.deltaTime;

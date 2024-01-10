@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(ItemContainer))]
-public class NewBehaviourScript : Editor
+public class ItemContainerEditor : Editor
 {
     public override void OnInspectorGUI()
     {
@@ -13,8 +13,7 @@ public class NewBehaviourScript : Editor
         {
             for(int i = 0; i < container.slots.Count; i++)
             {
-                container.slots[i].item = null;
-                container.slots[i].count = 0;
+                container.slots[i].Clear();
             }
         }
         DrawDefaultInspector();

@@ -26,7 +26,7 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
-    private void ShowInventory()
+    public void ShowInventory()
     {
         for (int i = 0; i < inventory.slots.Count; i++)
         {
