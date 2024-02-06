@@ -3,41 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryPanel : MonoBehaviour
+public class InventoryPanel : ItemPanel
 {
-    [SerializeField] ItemContainer inventory;
-    [SerializeField] List<InventoryButton> buttons;
-    private void Start()
+    public override void OnClick(int id)
     {
-        SetIndex(); 
+        GameManager.Instance.dragAndDropController.OnClick(inventory.slots[id]);
         ShowInventory();
-    }
-
-    private void OnEnable()
-    {
-       ShowInventory();
-    }
-
-    private void SetIndex()
-    {
-        for(int i  = 0; i < inventory.slots.Count; i++)
-        {
-            buttons[i].SetIndex(i);
-        }
-    }
-
-    public void ShowInventory()
-    {
-        for (int i = 0; i < inventory.slots.Count; i++)
-        {
-            if (inventory.slots[i].item == null)
-            {
-                buttons[i].Clean();
-            }
-            else
-            {
-                buttons[i].Set(inventory.slots[i]);
-            }
-        }
     }
 }
