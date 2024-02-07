@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: New Actor
   m_EditorClassIdentifier: 
   name: Bon Lu
-  portrait: {fileID: 0}
+  portrait: {fileID: -1209728623, guid: b21690cbe2a2b674daae57bbc71dab2c, type: 3}

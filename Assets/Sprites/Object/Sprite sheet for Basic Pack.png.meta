@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 31cd2e02e92fcd34d8b1f7f0d86510dc
+guid: 248c33f157125844f8d3ba3e08d42e3f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,22 +123,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialogueBox
+      name: Clock
       rect:
         serializedVersion: 2
-        x: 160
-        y: 30
-        width: 881
-        height: 297
+        x: 504
+        y: 68
+        width: 35
+        height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 5, y: 5, z: 5, w: 5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98ab696278efb03469d6dbdf7ef3daf0
-      internalID: -155012917
+      spriteID: e2a5f06bc2ddef042a5dbf9300e98edc
+      internalID: -1727451824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portrait
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 201
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669aa2a252655fb4e8ea2b4bbf7f0e49
+      internalID: 1160266742
       vertices: []
       indices: 
       edges: []
@@ -154,7 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dialogueBox: -155012917
+      Clock: -1727451824
+      Portrait: 1160266742
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

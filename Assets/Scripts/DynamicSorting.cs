@@ -23,7 +23,12 @@ public class DynamicSorting : MonoBehaviour
     {
         if (col.CompareTag("Tree"))
         {
-            sprite.sortingOrder = 4;
+            sprite.sortingOrder = 5;
+        }
+
+        else if (col.CompareTag("Hill"))
+        {
+            sprite.sortingOrder = 3;
         }
     }
 
@@ -32,13 +37,21 @@ public class DynamicSorting : MonoBehaviour
     {
         if (col.CompareTag("Tree"))
         {
-            sprite.sortingOrder = 4;
+            sprite.sortingOrder = 5;
+        }
+        else if (col.CompareTag("Hill"))
+        {
+            sprite.sortingOrder = 3;
         }
 
     }
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("Tree"))
+        {
+            sprite.sortingOrder = 6;
+        }
+        else if (col.CompareTag("Hill"))
         {
             sprite.sortingOrder = 6;
         }
