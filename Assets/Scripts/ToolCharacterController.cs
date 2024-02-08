@@ -14,7 +14,7 @@ public class ToolCharacterController : MonoBehaviour
     [SerializeField] float offsetDistance = 1f;
     [SerializeField] float sizeOfInteractableArea = 1.2f;
     [SerializeField] MarkerManager markerManager;
-    [SerializeField] List<TileMapReadController> controllers; // Change this to a list of TileMapReadControllers
+    [SerializeField] TileMapReadController controller; 
     [SerializeField] float maxDistance = 1.5f;
     [SerializeField] ToolAction onTilePickUp;
 
@@ -46,19 +46,12 @@ public class ToolCharacterController : MonoBehaviour
 
     private void SelectTile()
     {
-        foreach (TileMapReadController controller in controllers) // Iterate over each TileMapReadController in the list
-        {
-            selectedTilePosition = controller.GetGridPosition(Input.mousePosition, true);
-            if (selectedTilePosition != null)
-            {
-                break;
-            }
-        }
+        selectedTilePosition = controller.GetGridPosition(Input.mousePosition, true);
     }
 
     private void Marker()
     {
-        markerManager.markedCellPostion = new List<Vector3Int> { selectedTilePosition };
+        markerManager.markedCellPosition = new List<Vector3Int> { selectedTilePosition };
     }
 
     void CanSelectCheck()
@@ -101,23 +94,20 @@ public class ToolCharacterController : MonoBehaviour
         if (selectable == true)
         {
             Item item = toolBarController.GetItem;
-            if(item == null) 
+            if (item == null)
             {
                 PickUpTile();
-                return; 
+                return;
             }
-            if(item.onTileMapAction == null) { return; }
+            if (item.onTileMapAction == null) { return; }
 
             animator.SetTrigger("act");
-            foreach(TileMapReadController controller in controllers)
+            bool complete = item.onTileMapAction.OnApplyToTileMap(selectedTilePosition, controller, item);
+            if (complete == true)
             {
-                bool complete = item.onTileMapAction.OnApplyToTileMap(selectedTilePosition, controller, item);
-                if(complete == true)
+                if (item.onItemUsed != null)
                 {
-                    if(item.onItemUsed != null)
-                    {
-                        item.onItemUsed.OnItemUsed(item, GameManager.Instance.inventoryContainer);
-                    }
+                    item.onItemUsed.OnItemUsed(item, GameManager.Instance.inventoryContainer);
                 }
             }
         }
@@ -125,10 +115,7 @@ public class ToolCharacterController : MonoBehaviour
 
     private void PickUpTile()
     {
-        if(onTilePickUp == null) { return; }
-        foreach (TileMapReadController controller in controllers)
-        {
-            onTilePickUp.OnApplyToTileMap(selectedTilePosition, controller, null);       
-        }
+        if (onTilePickUp == null) { return; }
+        onTilePickUp.OnApplyToTileMap(selectedTilePosition, controller, null);
     }
 }

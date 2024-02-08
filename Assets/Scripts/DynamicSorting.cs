@@ -23,7 +23,7 @@ public class DynamicSorting : MonoBehaviour
     {
         if (col.CompareTag("Tree"))
         {
-            sprite.sortingOrder = 5;
+            sprite.sortingOrder = 6;
         }
 
         else if (col.CompareTag("Hill"))
@@ -37,7 +37,7 @@ public class DynamicSorting : MonoBehaviour
     {
         if (col.CompareTag("Tree"))
         {
-            sprite.sortingOrder = 5;
+            sprite.sortingOrder = 6;
         }
         else if (col.CompareTag("Hill"))
         {
@@ -49,7 +49,7 @@ public class DynamicSorting : MonoBehaviour
     {
         if (col.CompareTag("Tree"))
         {
-            sprite.sortingOrder = 6;
+            sprite.sortingOrder = 8;
         }
         else if (col.CompareTag("Hill"))
         {

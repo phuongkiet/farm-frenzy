@@ -1,15 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine;
 
 public class TileMapReadController : MonoBehaviour
 {
-    [SerializeField] List<Tilemap> tilemaps; // Change this to a list of Tilemaps
+    [SerializeField] Tilemap tilemap;
     public CropsManager cropsManager;
 
     public Vector3Int GetGridPosition(Vector2 position, bool mousePosition)
     {
+        if (tilemap == null)
+        {
+            tilemap = GameObject.Find("DirtTilemap").GetComponent<Tilemap>();
+        }
+
+        if (tilemap == null) { return Vector3Int.zero; }
+
         Vector3 worldPosition;
         if (mousePosition)
         {
@@ -20,23 +25,22 @@ public class TileMapReadController : MonoBehaviour
             worldPosition = position;
         }
 
-        Vector3Int gridPositions = tilemaps[0].WorldToCell(worldPosition); 
+        Vector3Int gridPositions = tilemap.WorldToCell(worldPosition);
 
         return gridPositions;
     }
 
     public TileBase GetTileBase(Vector3Int gridPosition)
     {
-        foreach (Tilemap tilemap in tilemaps) 
+        if (tilemap == null)
         {
-            TileBase tile = tilemap.GetTile(gridPosition);
-            if (tile != null)
-            {
-                return tile;
-            }
+            tilemap = GameObject.Find("DirtTilemap").GetComponent<Tilemap>();
         }
 
-        return null;
-    }
+        if (tilemap == null) { return null; }
 
+        TileBase tile = tilemap.GetTile(gridPosition);
+
+        return tile;
+    }
 }

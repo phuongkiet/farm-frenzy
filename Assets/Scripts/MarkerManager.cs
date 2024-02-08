@@ -8,7 +8,7 @@ public class MarkerManager : MonoBehaviour
 {
     [SerializeField] List<Tilemap> targetTilemap;
     [SerializeField] List<TileBase> tile;
-    public List<Vector3Int> markedCellPostion;
+    public List<Vector3Int> markedCellPosition;
     List<Vector3Int> oldCellPosition;
     bool show;
 
@@ -25,15 +25,15 @@ public class MarkerManager : MonoBehaviour
                 }
             }
 
-            if (markedCellPostion != null)
+            if (markedCellPosition != null)
             {
-                foreach (Vector3Int position in markedCellPostion)
+                foreach (Vector3Int position in markedCellPosition)
                 {
                     tilemap.SetTile(position, tile[0]);
                 }
             }
         }
-        oldCellPosition = markedCellPostion;
+        oldCellPosition = markedCellPosition;
     }
 
     internal void Show(bool selectable)
