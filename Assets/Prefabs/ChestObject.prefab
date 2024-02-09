@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8868211875351931747}
   - component: {fileID: 7037769727779441314}
+  - component: {fileID: 7764654113702361142}
   m_Layer: 0
   m_Name: ChestObject
   m_TagString: Tree
@@ -25,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2363144306373286589}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.55, y: -0.04, z: 0.07833734}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1277701, y: 4.1841073, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49,6 +50,53 @@ MonoBehaviour:
   chestClosed: {fileID: 7871709233913329972}
   chestOpened: {fileID: 6146134315767222732}
   opened: 0
+  openChestAudio: {fileID: 8300000, guid: c96a700d232b96140bbcf6095a9b61fc, type: 3}
+  closeChestAudio: {fileID: 8300000, guid: 7ed99de9e360ef14da83d877b32dfc8b, type: 3}
+--- !u!61 &7764654113702361142
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2363144306373286589}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08820245, y: -0.012971163}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6212482, y: 0.2788148}
+  m_EdgeRadius: 0
 --- !u!1 &6146134315767222732
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +108,7 @@ GameObject:
   - component: {fileID: 6901000180621734167}
   - component: {fileID: 7402852502255247498}
   - component: {fileID: 4073150268574113142}
-  - component: {fileID: 3041606139370469154}
+  - component: {fileID: 4547015408398922033}
   m_Layer: 0
   m_Name: ChestOpened
   m_TagString: Tree
@@ -123,7 +171,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1599211209
   m_SortingLayer: 3
-  m_SortingOrder: 7
+  m_SortingOrder: 6
   m_Sprite: {fileID: -499032297, guid: 3c79fb5328ef7a84b99df90777256126, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -180,7 +228,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.77777576, y: 0.41}
   m_EdgeRadius: 0
---- !u!61 &3041606139370469154
+--- !u!61 &4547015408398922033
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +271,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.73}
+  m_Size: {x: 1.05, y: 0.68}
   m_EdgeRadius: 0
 --- !u!1 &7871709233913329972
 GameObject:
@@ -236,7 +284,7 @@ GameObject:
   - component: {fileID: 3346496368148591681}
   - component: {fileID: 7165436979276456692}
   - component: {fileID: 5122940896120649462}
-  - component: {fileID: 5763428048731346991}
+  - component: {fileID: 6459311221849122052}
   m_Layer: 0
   m_Name: ChestClosed
   m_TagString: Tree
@@ -299,7 +347,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1599211209
   m_SortingLayer: 3
-  m_SortingOrder: 7
+  m_SortingOrder: 6
   m_Sprite: {fileID: 466189048, guid: 3c79fb5328ef7a84b99df90777256126, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -356,7 +404,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.77777576, y: 0.34866828}
   m_EdgeRadius: 0
---- !u!61 &5763428048731346991
+--- !u!61 &6459311221849122052
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -388,7 +436,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
+  m_Offset: {x: 0, y: 0.37}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -399,5 +447,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.35}
+  m_Size: {x: 1.04, y: 0.34866828}
   m_EdgeRadius: 0

@@ -39,7 +39,7 @@ public class GameSceneManager : MonoBehaviour
             if (unload.isDone) { unload = null; }
             yield return new WaitForSeconds(0.1f);
         }
-
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentScene));
         confiner.UpdateBounds();
         screenTint.UnTint();
     }
