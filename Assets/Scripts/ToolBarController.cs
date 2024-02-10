@@ -9,6 +9,7 @@ public class ToolBarController : MonoBehaviour
     int selectedTool;
 
     public Action<int> onChange;
+    [SerializeField] IconHighlight iconHighlight;
 
     public Item GetItem
     {
@@ -16,6 +17,13 @@ public class ToolBarController : MonoBehaviour
             return GameManager.Instance.inventoryContainer.slots[selectedTool].item;
         }
     }
+
+    private void Start()
+    {
+        onChange += UpdateHighlightIcon;
+        UpdateHighlightIcon(selectedTool);
+    }
+
     internal void Set(int id)
     {
         selectedTool = id;
@@ -37,6 +45,21 @@ public class ToolBarController : MonoBehaviour
                 selectedTool = (selectedTool <= 0 ? toolBarSize - 1 : selectedTool);
             }
             onChange?.Invoke(selectedTool);
+        }
+    }
+
+    void UpdateHighlightIcon(int id)
+    {
+        Item item = GetItem;
+        if(item == null)
+        {
+            iconHighlight.Show = false;
+            return;
+        }
+        iconHighlight.Show = item.iconHighlight;
+        if (item.iconHighlight)
+        {
+            iconHighlight.Set(item.icon);
         }
     }
 }

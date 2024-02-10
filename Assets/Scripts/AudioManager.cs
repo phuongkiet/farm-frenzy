@@ -34,6 +34,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play(AudioClip audioClip)
     {
+        if (audioClip == null) { return; }
         AudioSource audioSource = GetFreeAudioSource();
 
         audioSource.clip = audioClip;

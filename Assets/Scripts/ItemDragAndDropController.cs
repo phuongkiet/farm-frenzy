@@ -21,15 +21,17 @@ public class ItemDragAndDropController : MonoBehaviour
 
     private void Update()
     {
-        if(itemIcon.activeInHierarchy == true)
+        if (itemIcon.activeInHierarchy == true)
         {
             iconTransform.position = Input.mousePosition;
 
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("Mouse button released");
                 if (EventSystem.current.IsPointerOverGameObject() == false)
                 {
-                    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Debug.Log("Mouse not over UI");
+                    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(iconTransform.position);
                     worldPosition.z = 0;
                     ItemSpawnManager.instance.SpawnItem(worldPosition, itemSlot.item, itemSlot.count);
                     itemSlot.Clear();
@@ -59,7 +61,7 @@ public class ItemDragAndDropController : MonoBehaviour
 
     private void UpdateIcon()
     {
-        if(itemSlot.item == null)
+        if (itemSlot.item == null)
         {
             itemIcon.SetActive(false);
         }

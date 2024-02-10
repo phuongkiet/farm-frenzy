@@ -52,6 +52,7 @@ MonoBehaviour:
   opened: 0
   openChestAudio: {fileID: 8300000, guid: c96a700d232b96140bbcf6095a9b61fc, type: 3}
   closeChestAudio: {fileID: 8300000, guid: 7ed99de9e360ef14da83d877b32dfc8b, type: 3}
+  itemContainer: {fileID: 11400000, guid: db0e9cdb8738c2c4495d26b2536310a3, type: 2}
 --- !u!61 &7764654113702361142
 BoxCollider2D:
   m_ObjectHideFlags: 0

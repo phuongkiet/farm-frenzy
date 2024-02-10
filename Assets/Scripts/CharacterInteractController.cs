@@ -14,6 +14,7 @@ public class CharacterInteractController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController2D>();
         rigidbody = GetComponent<Rigidbody2D>();
+        character = GetComponent<Character>();
     }
 
     private void Update()

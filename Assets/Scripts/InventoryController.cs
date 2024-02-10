@@ -10,8 +10,26 @@ public class InventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            panel.SetActive(!panel.activeInHierarchy);
-            toolBarPanel.SetActive(!toolBarPanel.activeInHierarchy);
+            if(panel.activeInHierarchy == false)
+            {
+                Open();
+            }
+            else
+            {
+                Close();
+            }
         }
+    }
+
+    public void Open()
+    {
+        panel.SetActive(true);
+        toolBarPanel.SetActive(false);
+    }
+
+    public void Close()
+    {
+        panel.SetActive(false);
+        toolBarPanel.SetActive(true);
     }
 }
