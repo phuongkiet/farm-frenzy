@@ -9,10 +9,14 @@ public class PlaceableObject
     public Transform targetObject;
     public Vector3Int positionOnGrid;
 
-    public PlaceableObject(Item item, Transform targetObject, Vector3Int positionOnGrid)
+    //<summary>
+    // serialized JSON string which contains the state of the object
+    //</summary>
+    public string objectState;
+
+    public PlaceableObject(Item item, Vector3Int positionOnGrid)
     {
         this.item = item;
-        this.targetObject = targetObject;
         this.positionOnGrid = positionOnGrid;
     }
 }
@@ -21,4 +25,13 @@ public class PlaceableObject
 public class PlaceableObjectsContainer : ScriptableObject
 {
     public List<PlaceableObject> placeableObjects;
+    internal PlaceableObject Get(Vector3Int position)
+    {
+        return placeableObjects.Find(x => x.positionOnGrid == position);
+    }
+
+    internal void Remove(PlaceableObject placeableObject)
+    {
+        placeableObjects.Remove(placeableObject);
+    }
 }

@@ -14,7 +14,7 @@ public class ItemContainerInteractController : MonoBehaviour
         if(openedChest != null)
         {
             float distance = Vector2.Distance(openedChest.position, transform.position);
-            if(distance < maxDistance)
+            if(distance > maxDistance)
             {
                 openedChest.GetComponent<LootContainerInteract>().Close(GetComponent<Character>());
             }

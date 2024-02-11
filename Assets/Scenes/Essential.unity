@@ -4086,7 +4086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestPanel: {fileID: 220374517}
-  maxDistance: 0.8
+  maxDistance: 2.5
 --- !u!1001 &312801525
 PrefabInstance:
   m_ObjectHideFlags: 0
