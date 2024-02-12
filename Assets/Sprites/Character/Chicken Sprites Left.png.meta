@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff7902ea49c2f0a49b7641f468142149
+guid: 1d23e753c51dd4748b240bc1dc39003b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,10 +123,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Free Chicken Sprites_0
+      name: Chicken Sprites Left_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 36
         y: 17
         width: 11
         height: 12
@@ -137,17 +137,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 031c7f3616fad104ca6344e4b5c9b61a
-      internalID: -1802111514
+      spriteID: d3f79ebbf171d26458e7cb1c79e34ae3
+      internalID: 365856216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Free Chicken Sprites_1
+      name: Chicken Sprites Left_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 52
         y: 17
         width: 11
         height: 12
@@ -158,38 +158,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1dc94466c0a82a418fde0823849db98
-      internalID: -1280206601
+      spriteID: 229569444070e28448e7d5a0883c0d7b
+      internalID: 1883733298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Free Chicken Sprites_2
+      name: Chicken Sprites Left_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfbe3962ddf4f2e4593810d22a88fb80
-      internalID: 130066063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Free Chicken Sprites_3
-      rect:
-        serializedVersion: 2
-        x: 17
+        x: 4
         y: 1
         width: 11
         height: 13
@@ -200,17 +179,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fefd5df031f610f4db45b5aa20f000f2
-      internalID: 892250731
+      spriteID: 5f7971f70f531ef46b6fdc8da7fcf372
+      internalID: 1994579461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Free Chicken Sprites_4
+      name: Chicken Sprites Left_3
       rect:
         serializedVersion: 2
-        x: 32
+        x: 19
         y: 1
         width: 13
         height: 12
@@ -221,17 +200,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cba24e42fb50d643ac3f5ee3c187077
-      internalID: -91284069
+      spriteID: d2f1ed9e3e0aaf84b8df30aba17c2999
+      internalID: 1515789583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Free Chicken Sprites_5
+      name: Chicken Sprites Left_4
       rect:
         serializedVersion: 2
-        x: 49
+        x: 36
         y: 1
         width: 11
         height: 13
@@ -242,8 +221,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 545754fe0cd97fd449cb3e7263a54958
-      internalID: -1240228173
+      spriteID: 41855d50b5589d247a1d05309bd7c7af
+      internalID: -829142051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Sprites Left_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1844bfc43fbdb2b4a81e08165ea3ef55
+      internalID: -1313262951
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Free Chicken Sprites_0: -1802111514
-      Free Chicken Sprites_1: -1280206601
-      Free Chicken Sprites_2: 130066063
-      Free Chicken Sprites_3: 892250731
-      Free Chicken Sprites_4: -91284069
-      Free Chicken Sprites_5: -1240228173
+      Chicken Sprites Left_0: 365856216
+      Chicken Sprites Left_1: 1883733298
+      Chicken Sprites Left_2: 1994579461
+      Chicken Sprites Left_3: 1515789583
+      Chicken Sprites Left_4: -829142051
+      Chicken Sprites Left_5: -1313262951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
