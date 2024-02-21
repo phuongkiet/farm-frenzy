@@ -9,6 +9,7 @@ public class TilemapCropsManager : TimeAgent
 {
     [SerializeField] TileBase plowed;
     [SerializeField] TileBase seeded;
+    [SerializeField] TileBase watered;
     Tilemap targetTilemap;
     [SerializeField] CropsContainer container;
     [SerializeField] GameObject cropSpritePrefab;
@@ -55,6 +56,12 @@ public class TilemapCropsManager : TimeAgent
                 continue;
             }
 
+            if (!cropTile.isWatered)
+            {
+                Debug.Log("The crop at position " + cropTile.position + " is not watered!");
+                continue;
+            }
+
             if (cropTile.Complete)
             {
                 Debug.Log("Im done growing");
@@ -72,6 +79,7 @@ public class TilemapCropsManager : TimeAgent
             }
         }
     }
+
 
     public bool Check(Vector3Int position)
     {
@@ -136,6 +144,30 @@ public class TilemapCropsManager : TimeAgent
             ItemSpawnManager.instance.SpawnItem(targetTilemap.CellToWorld(gridPosition), tile.crop.yeild, tile.crop.count);
             tile.Harvested();
             VisualizeTile(tile);
+        }
+    }
+
+    public void Water(Vector3Int position)
+    {
+        CropTile cropTile = container.Get(position);
+        if (cropTile != null)
+        {
+            cropTile.isWatered = true;
+
+            // Check if the tile has been seeded
+            if (cropTile.crop != null)
+            {
+                // If seeded, visualize both the crop tile and the watered tile
+                targetTilemap.SetTile(position, watered); // Visualize watered tile
+                VisualizeTile(cropTile); // Re-visualize crop tile
+            }
+            else
+            {
+                // If not seeded, just visualize the watered tile
+                targetTilemap.SetTile(position, watered);
+            }
+
+            Debug.Log("Crop at position " + position + " watered!");
         }
     }
 }

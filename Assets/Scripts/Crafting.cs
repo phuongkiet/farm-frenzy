@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Crafting : MonoBehaviour
 {
@@ -28,6 +31,4 @@ public class Crafting : MonoBehaviour
         }
         inventory.Add(recipe.output.item, recipe.output.count);
     }
-
-   
 }

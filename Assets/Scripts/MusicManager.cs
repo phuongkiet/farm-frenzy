@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,15 +19,6 @@ public class MusicManager : MonoBehaviour
     private void Start()
     {
         Play(audioClip, true);
-    }
-    private void Update()
-    {
-        gameTime += Time.deltaTime;
-        if (gameTime >= 72000f) 
-        {
-            Play(audioClip2, true);
-            gameTime = 18000f; 
-        }
     }
     public void Play(AudioClip musicToPlay, bool interupt = false)
     {
@@ -57,5 +49,17 @@ public class MusicManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         Play(switchTo, true);
+    }
+
+    public void SwitchToNightMusic()
+    {
+        SmoothSwitchMusic();
+        Play(audioClip2, true);
+    }
+
+    internal void SwitchToDayMusic()
+    {
+        SmoothSwitchMusic();
+        Play(audioClip, true);
     }
 }

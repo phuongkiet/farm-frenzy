@@ -13,6 +13,7 @@ public class CropTile
     public SpriteRenderer spriteRenderer;
     public float damage;
     public Vector3Int position;
+    public bool isWatered;
 
     public bool Complete
     {
@@ -22,6 +23,16 @@ public class CropTile
             return growTimer >= crop.timeToGrow;
         }
     }
+    public CropTile()
+    {
+        position = Vector3Int.zero;
+        crop = null;
+        damage = 0f;
+        growStage = 0;
+        growTimer = 0;
+        spriteRenderer = null;
+        isWatered = false; 
+    }
 
     internal void Harvested()
     {
@@ -30,6 +41,7 @@ public class CropTile
         crop = null;
         damage = 0;
         spriteRenderer.gameObject.SetActive(false);
+        isWatered = false;
     }
 }
 
@@ -74,5 +86,15 @@ public class CropsManager : MonoBehaviour
             return;
         }
         cropsManager.Plow(position);
+    }
+
+    public void Water(Vector3Int position)
+    {
+        if(cropsManager == null)
+        {
+            Debug.Log("No tilemap crops manager are referenced in the crops manager");
+            return;
+        }
+        cropsManager.Water(position);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,10 +18,18 @@ public class DayTimeController : MonoBehaviour
     [SerializeField] float timeScale = 60f;
     [SerializeField] float startAtTime = 28800f; //in seconds
     [SerializeField] Text text;
+    [SerializeField] Text dayOfWeekText;
     [SerializeField] Light2D globalLight;
     private int days;
+    bool nightMusicStarted = false;
+    bool dayMusicStarted = false;
+
+    DayOfWeek dayOfWeek;
 
     List<TimeAgent> timeAgent;
+
+    // Reference to the MusicManager
+    [SerializeField] MusicManager musicManager;
 
     private void Awake()
     {
@@ -30,6 +39,7 @@ public class DayTimeController : MonoBehaviour
     private void Start()
     {
         time = startAtTime;
+        UpdateDateText();
     }
 
     public void Subscribe(TimeAgent agent)
@@ -65,6 +75,36 @@ public class DayTimeController : MonoBehaviour
         }
 
         TimeAgents();
+
+        if (IsNightTime() && !nightMusicStarted)
+        {
+            musicManager.SwitchToNightMusic();
+            nightMusicStarted = true;
+        }
+        else if (!IsNightTime())
+        {
+            nightMusicStarted = false;
+        }
+
+        if(IsDayTime() && !dayMusicStarted)
+        {
+            musicManager.SwitchToDayMusic();
+            dayMusicStarted = true;
+        }
+        else if (!IsDayTime())
+        {
+            dayMusicStarted = false;
+        }
+    }
+
+    private bool IsNightTime()
+    {
+        return Hours >= 20f;
+    }
+
+    private bool IsDayTime()
+    {
+        return Hours >= 5f;
     }
 
     int oldPhase = 0;
@@ -93,6 +133,7 @@ public class DayTimeController : MonoBehaviour
     {
         int hh = (int)Mathf.Floor(Hours);
         int mm = (int)Minutes;
+
         text.text = hh.ToString("00") + ":" + mm.ToString("00");
     }
 
@@ -100,5 +141,19 @@ public class DayTimeController : MonoBehaviour
     {
         time = 0;
         days += 1;
+
+        int dayNum = (int)dayOfWeek;
+        dayNum += 1;
+        if (dayNum >= 7)
+        {
+            dayNum = 0;
+        }
+        dayOfWeek = (DayOfWeek)dayNum;
+        UpdateDateText();
+    }
+
+    private void UpdateDateText()
+    {
+        dayOfWeekText.text = dayOfWeek.ToString();
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a243705e7ef34e94c9fcba8fb71c3ff6, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Tomato
   stackable: 1
   icon: {fileID: -1410220378, guid: 6ab3659b3650ab24992df735e5f12888, type: 3}
   onAction: {fileID: 0}
@@ -20,3 +20,5 @@ MonoBehaviour:
   onTileAction: {fileID: 0}
   onItemUsed: {fileID: 0}
   crop: {fileID: 0}
+  iconHighlight: 0
+  itemPrefabs: {fileID: 0}

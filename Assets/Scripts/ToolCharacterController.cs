@@ -43,6 +43,10 @@ public class ToolCharacterController : MonoBehaviour
             }
             UseToolGrid();
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            UseToolWater();
+        }
     }
 
     private void SelectTile()
@@ -100,6 +104,29 @@ public class ToolCharacterController : MonoBehaviour
             if (item == null)
             {
                 PickUpTile();
+                return;
+            }
+            if (item.onTileMapAction == null) { return; }
+
+            animator.SetTrigger("act");
+            bool complete = item.onTileMapAction.OnApplyToTileMap(selectedTilePosition, controller, item);
+            if (complete == true)
+            {
+                if (item.onItemUsed != null)
+                {
+                    item.onItemUsed.OnItemUsed(item, GameManager.Instance.inventoryContainer);
+                }
+            }
+        }
+    }
+
+    private void UseToolWater()
+    {
+        if (selectable == true)
+        {
+            Item item = toolBarController.GetItem;
+            if (item == null)
+            { 
                 return;
             }
             if (item.onTileMapAction == null) { return; }
