@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dbc65d5f0c4924a8c6b91ec9d1226f, type: 3}
   m_Name: WheatCrop
   m_EditorClassIdentifier: 
-  timeToGrow: 10
-  yeild: {fileID: 0}
-  count: 1
-  sprites: []
-  growthStageTime: 
+  cropType: 0
+  timeToGrow: 15
+  yeild: {fileID: 11400000, guid: 7abc732ae6cdd494394da197c9fb7dda, type: 2}
+  count: 5
+  sprites:
+  - {fileID: -1863444998, guid: 6ab3659b3650ab24992df735e5f12888, type: 3}
+  - {fileID: -57199021, guid: 6ab3659b3650ab24992df735e5f12888, type: 3}
+  - {fileID: -2134649374, guid: 6ab3659b3650ab24992df735e5f12888, type: 3}
+  growthStageTime: 050000000a0000000f000000
+  cropTileBase: {fileID: 11400000, guid: 3c123384462c97b41b0301e7062da1d4, type: 2}

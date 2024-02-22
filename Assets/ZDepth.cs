@@ -18,6 +18,6 @@ public class ZDepth : MonoBehaviour
         pos.z = pos.y * 0.0001f;
         transform.position = pos;
 
-        if(stationary) { Destroy(this); }
+        if (stationary) { Destroy(this); }
     }
 }

@@ -94,29 +94,50 @@ public class TilemapCropsManager : TimeAgent
 
     public void Seed(Vector3Int position, Crop toSeed)
     {
-        CropTile tile = container.Get(position);    
-        if(tile == null) { return; }
-        targetTilemap.SetTile(position, seeded);
+        CropTile tile = container.Get(position);
+        if (tile == null) { return; }
+
+        targetTilemap.SetTile(position, toSeed.cropTileBase); 
         tile.crop = toSeed;
     }
 
     public void VisualizeTile(CropTile cropTile)
     {
-        targetTilemap.SetTile(cropTile.position, cropTile.crop != null ? seeded : plowed);  
-        
-        if(cropTile.spriteRenderer == null)
+        if (cropTile.crop != null)
+        {
+            switch (cropTile.crop.cropType)
+            {
+                case Crop.CropType.Wheat:
+                    targetTilemap.SetTile(cropTile.position, cropTile.crop.cropTileBase);
+                    break;
+                case Crop.CropType.Tomato:
+                    targetTilemap.SetTile(cropTile.position, cropTile.crop.cropTileBase);
+                    break;
+                default:
+                    targetTilemap.SetTile(cropTile.position, seeded);
+                    break;
+            }
+        }
+        else
+        {
+            targetTilemap.SetTile(cropTile.position, plowed);
+        }
+
+        if (cropTile.spriteRenderer == null)
         {
             GameObject go = Instantiate(cropSpritePrefab, transform);
             go.transform.position = targetTilemap.CellToWorld(cropTile.position);
             cropTile.spriteRenderer = go.GetComponent<SpriteRenderer>();
         }
+
         bool growing = cropTile.crop != null && cropTile.growTimer >= cropTile.crop.growthStageTime[0];
         cropTile.spriteRenderer.gameObject.SetActive(growing);
-        if(growing == true)
+        if (growing)
         {
-            cropTile.spriteRenderer.sprite = cropTile.crop.sprites[cropTile.growStage-1];
+            cropTile.spriteRenderer.sprite = cropTile.crop.sprites[cropTile.growStage - 1];
         }
     }
+
     private void CreatePlowedTile(Vector3Int position)
     {
 

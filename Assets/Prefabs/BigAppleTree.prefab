@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7826508778573507767}
   - component: {fileID: 4594476064282170599}
   - component: {fileID: -8610366565944928637}
-  - component: {fileID: 6670676066530109798}
   - component: {fileID: 8958074292916467895}
+  - component: {fileID: 3124821848767550344}
   m_Layer: 0
   m_Name: BigAppleTree
   m_TagString: Tree
@@ -198,19 +198,6 @@ MonoBehaviour:
   count: 1
   spread: 2
   probability: 0.01
---- !u!114 &6670676066530109798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2986307308756929371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4cd7c2f97f1d694d8f4c267a0ddb501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stationary: 1
 --- !u!114 &8958074292916467895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,3 +218,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f75eff5c288189446b71f4a49c935ef3, type: 2}
   itemCountInOneDrop: 1
   nodeType: 1
+--- !u!114 &3124821848767550344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986307308756929371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc85fce215197e4d8244a880cbba952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 0

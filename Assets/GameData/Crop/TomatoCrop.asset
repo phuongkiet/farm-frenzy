@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dbc65d5f0c4924a8c6b91ec9d1226f, type: 3}
   m_Name: TomatoCrop
   m_EditorClassIdentifier: 
+  cropType: 1
   timeToGrow: 15
   yeild: {fileID: 11400000, guid: 47a0f8a23644ea14aa8cbc8442f667c4, type: 2}
   count: 5
@@ -20,3 +21,4 @@ MonoBehaviour:
   - {fileID: 1115815119, guid: 6ab3659b3650ab24992df735e5f12888, type: 3}
   - {fileID: 1087267217, guid: 6ab3659b3650ab24992df735e5f12888, type: 3}
   growthStageTime: 050000000a0000000f000000
+  cropTileBase: {fileID: 11400000, guid: d94ff6ae3f460d7428c3a17904e80648, type: 2}
