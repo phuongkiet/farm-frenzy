@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5735513881112164728}
   - component: {fileID: 1395827947528104306}
   - component: {fileID: 4364423860669937531}
+  - component: {fileID: 2019703935767332583}
   m_Layer: 0
   m_Name: Boulder
   m_TagString: Tree
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1599211209
   m_SortingLayer: 3
-  m_SortingOrder: 7
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1000823787, guid: fd78df6cabc0c4a46b751930192369aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -157,7 +158,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243422965861851021}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -195,3 +196,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &2019703935767332583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243422965861851021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cd7c2f97f1d694d8f4c267a0ddb501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1

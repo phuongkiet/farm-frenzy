@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7826508778573507767}
   - component: {fileID: 4594476064282170599}
   - component: {fileID: -8610366565944928637}
+  - component: {fileID: 6670676066530109798}
+  - component: {fileID: 8958074292916467895}
   m_Layer: 0
   m_Name: BigAppleTree
   m_TagString: Tree
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1599211209
   m_SortingLayer: 3
-  m_SortingOrder: 7
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1801455599, guid: fd78df6cabc0c4a46b751930192369aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -140,7 +142,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2986307308756929371}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -196,3 +198,36 @@ MonoBehaviour:
   count: 1
   spread: 2
   probability: 0.01
+--- !u!114 &6670676066530109798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986307308756929371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cd7c2f97f1d694d8f4c267a0ddb501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1
+--- !u!114 &8958074292916467895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986307308756929371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d33a2e1a5c7e0445b09fdc7af4658e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpDrop: {fileID: 0}
+  dropCount: 5
+  spread: 2
+  items:
+  - {fileID: 11400000, guid: 370eb47451f4694438c73c31b588e79b, type: 2}
+  - {fileID: 11400000, guid: f75eff5c288189446b71f4a49c935ef3, type: 2}
+  itemCountInOneDrop: 1
+  nodeType: 1

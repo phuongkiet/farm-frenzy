@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1599211209
   m_SortingLayer: 3
-  m_SortingOrder: 7
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1615304776, guid: fd78df6cabc0c4a46b751930192369aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -147,7 +147,8 @@ MonoBehaviour:
   pickUpDrop: {fileID: 3105739170330048861, guid: 19e25801a3be5e74582e73bd4e99211e, type: 3}
   dropCount: 5
   spread: 0.7
-  item: {fileID: 11400000, guid: 370eb47451f4694438c73c31b588e79b, type: 2}
+  items:
+  - {fileID: 11400000, guid: 370eb47451f4694438c73c31b588e79b, type: 2}
   itemCountInOneDrop: 1
   nodeType: 1
 --- !u!58 &3016423199824307499
@@ -157,7 +158,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2660445954983285334}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

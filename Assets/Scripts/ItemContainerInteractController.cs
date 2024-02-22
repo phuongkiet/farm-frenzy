@@ -6,6 +6,7 @@ public class ItemContainerInteractController : MonoBehaviour
 {
     ItemContainer targetItemContainer;
     [SerializeField] GameObject chestPanel;
+    [SerializeField] GameObject toolBarPanel;
     Transform openedChest;
     [SerializeField] float maxDistance = 2.5f;
 
@@ -25,12 +26,14 @@ public class ItemContainerInteractController : MonoBehaviour
     {
         targetItemContainer = itemContainer;
         chestPanel.SetActive(true);
+        toolBarPanel.SetActive(false);
         openedChest = _openedChest;
     }
 
     public void Close()
     {
         chestPanel.SetActive(false);
+        toolBarPanel.SetActive(true);
         openedChest = null;
     }
 }

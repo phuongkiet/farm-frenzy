@@ -7,7 +7,7 @@ public class ResourceNode : ToolHit
     [SerializeField] GameObject pickUpDrop;
     [SerializeField] int dropCount = 5;
     [SerializeField] float spread = 0.7f;
-    [SerializeField] Item item;
+    [SerializeField] List<Item> items;
     [SerializeField] int itemCountInOneDrop = 1;
     [SerializeField] ResourceNodeType nodeType;
     public override void Hit()
@@ -18,7 +18,10 @@ public class ResourceNode : ToolHit
             Vector3 position = transform.position;
             position.x += spread * UnityEngine.Random.value - spread / 2;
             position.y += spread * UnityEngine.Random.value - spread / 2;
-            ItemSpawnManager.instance.SpawnItem(position, item, itemCountInOneDrop);
+            foreach(Item item in items)
+            {
+                ItemSpawnManager.instance.SpawnItem(position, item, itemCountInOneDrop);
+            }
         }
         Destroy(gameObject);
     }
