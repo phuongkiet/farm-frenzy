@@ -14,6 +14,7 @@ public class RecipePanel : CraftingItemPanel
         for(int i = 0; i < buttons.Count && i < list.recipe.Count; i++)
         {
             buttons[i].Set(list.recipe[i].output);
+            buttons[i].SetRecipe(list.recipe[i]);
         }
     }
 

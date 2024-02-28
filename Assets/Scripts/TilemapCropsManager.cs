@@ -39,7 +39,7 @@ public class TilemapCropsManager : TimeAgent
         }
     }
 
-    public void Tick()
+    public void Tick(DayTimeController dayTimeController)
     {
         if (targetTilemap == null) { return; }
 
@@ -189,6 +189,15 @@ public class TilemapCropsManager : TimeAgent
             }
 
             Debug.Log("Crop at position " + position + " watered!");
+        }
+    }
+
+    public void ResetWateredStatus()
+    {
+        foreach (CropTile cropTile in container.crops)
+        {
+            cropTile.isWatered = false;
+            VisualizeTile(cropTile);
         }
     }
 }

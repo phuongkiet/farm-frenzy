@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0394dce19a7b44eb6ced5a14c66554, type: 3}
   m_Name: New Actor
   m_EditorClassIdentifier: 
-  name: Bon Lu
+  name: Suka
   portrait: {fileID: -1209728623, guid: b21690cbe2a2b674daae57bbc71dab2c, type: 3}

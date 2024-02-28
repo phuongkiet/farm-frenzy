@@ -17,4 +17,9 @@ public class CropsContainer : ScriptableObject
     {
         crops.Add(crop);    
     }
+
+    public List<CropTile> GetAllCropTiles()
+    {
+        return crops; 
+    }
 }

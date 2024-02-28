@@ -19,6 +19,8 @@ public class DialogueSystem : MonoBehaviour
     float totalTimeToType, currentTime;
     string lineToShow;
 
+    public Action OnDialogueConclude;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -97,5 +99,6 @@ public class DialogueSystem : MonoBehaviour
     {
         Debug.Log("The dialogue has ended");
         Show(false);
+        OnDialogueConclude?.Invoke();
     }
 }

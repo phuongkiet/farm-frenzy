@@ -17,7 +17,7 @@ public class ObjectSpawner : MonoBehaviour
         TimeAgent timeAgent = GetComponent<TimeAgent>();
         timeAgent.onTimeTick += Spawn;
     }
-    void Spawn()
+    void Spawn(DayTimeController dayTimeController)
     {
         if(Random.value > probability)
         {

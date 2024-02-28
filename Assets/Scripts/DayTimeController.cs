@@ -5,6 +5,25 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
+public enum DayOfWeek
+{
+    Sunday = 0,
+    Monday = 1,
+    Tuesday = 2,
+    Wednesday = 3,
+    Thursday = 4,
+    Friday = 5,
+    Saturday = 6
+}
+
+public enum Season
+{
+    Spring = 0,
+    Summer = 1,
+    Fall = 2,
+    Winter = 3
+}
+
 public class DayTimeController : MonoBehaviour
 {
     const float secondsInDay = 86400f;
@@ -19,12 +38,16 @@ public class DayTimeController : MonoBehaviour
     [SerializeField] float startAtTime = 28800f; //in seconds
     [SerializeField] Text text;
     [SerializeField] Text dayOfWeekText;
+    [SerializeField] Text season;
+    [SerializeField] Text date;
     [SerializeField] Light2D globalLight;
-    private int days;
+    private int days = 1;
     bool nightMusicStarted = false;
     bool dayMusicStarted = false;
 
     DayOfWeek dayOfWeek;
+    Season currentSeason;
+    const int seasonLength = 20;
 
     List<TimeAgent> timeAgent;
 
@@ -40,6 +63,8 @@ public class DayTimeController : MonoBehaviour
     {
         time = startAtTime;
         UpdateDateText();
+        UpdateSeason();
+        UpdateDate();
     }
 
     public void Subscribe(TimeAgent agent)
@@ -117,7 +142,7 @@ public class DayTimeController : MonoBehaviour
             oldPhase = currentPhase;
             for (int i = 0; i < timeAgent.Count; i++)
             {
-                timeAgent[i].Invoke();
+                timeAgent[i].Invoke(this);
             }
         }
     }
@@ -141,7 +166,7 @@ public class DayTimeController : MonoBehaviour
     {
         time = 0;
         days += 1;
-
+        UpdateDate();
         int dayNum = (int)dayOfWeek;
         dayNum += 1;
         if (dayNum >= 7)
@@ -150,6 +175,46 @@ public class DayTimeController : MonoBehaviour
         }
         dayOfWeek = (DayOfWeek)dayNum;
         UpdateDateText();
+
+        ResetCropWateredStatus();
+
+        if (days >= seasonLength)
+        {
+            NextSeason();
+        }
+    }
+
+    private void ResetCropWateredStatus()
+    {
+        TilemapCropsManager[] cropManagers = FindObjectsOfType<TilemapCropsManager>();
+        foreach (TilemapCropsManager manager in cropManagers)
+        {
+            manager.ResetWateredStatus();
+        }
+    }
+
+    private void UpdateDate()
+    {
+        date.text = days.ToString();
+    }
+
+    private void NextSeason()
+    {
+        days = 1;
+        int seasonNum = (int)currentSeason;
+        seasonNum += 1;
+        if(seasonNum >= 4)
+        {
+            seasonNum = 0;
+        }
+
+        currentSeason = (Season)seasonNum;
+        UpdateSeason();
+    }
+
+    private void UpdateSeason()
+    {
+        season.text = currentSeason.ToString();
     }
 
     private void UpdateDateText()

@@ -15,4 +15,6 @@ public class Item : ScriptableObject
     public Crop crop;
     public bool iconHighlight;
     public GameObject itemPrefabs;
+    public int price = 100;
+    public bool isSell;
 }

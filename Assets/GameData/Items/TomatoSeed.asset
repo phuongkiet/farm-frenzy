@@ -20,3 +20,7 @@ MonoBehaviour:
   onTileAction: {fileID: 0}
   onItemUsed: {fileID: 11400000, guid: 04d8d638b12a759409c9b00d6a7d3c0a, type: 2}
   crop: {fileID: 11400000, guid: a402cb09a3e9c2744adc8ca500cb71ef, type: 2}
+  iconHighlight: 0
+  itemPrefabs: {fileID: 0}
+  price: 100
+  isSell: 1

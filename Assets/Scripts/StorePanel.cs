@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPanel : MonoBehaviour
+public class StorePanel : MonoBehaviour
 {
     public ItemContainer inventory;
-    public List<InventoryButton> buttons;
+    public List<StoreButton> buttons;
     private void Start()
     {
         Init();
@@ -13,9 +14,18 @@ public class ItemPanel : MonoBehaviour
 
     public void Init()
     {
+        /*SetSourcePanel();*/
         SetIndex();
         Show();
     }
+
+    /*private void SetSourcePanel()
+    {
+        for(int i = 0; i < buttons.Count; i++)
+        {
+            buttons[i].SetItemStorePanel(this);
+        }
+    }*/
 
     private void OnEnable()
     {
@@ -25,7 +35,7 @@ public class ItemPanel : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (inventory == null) { return; }
+        if(inventory == null) { return; }
         if (inventory.isDirty)
         {
             Show();
@@ -56,16 +66,23 @@ public class ItemPanel : MonoBehaviour
             }
         }
     }
+
     /*public void Clear()
     {
-        for (int i = 0; i < buttons.Count; i++)
+        for(int i = 0; i < buttons.Count; i++)
         {
             buttons[i].Clean();
         }
     }*/
+
+    public void SetInventory(ItemContainer newInventory)
+    {
+        inventory = newInventory;
+    }
 
     public virtual void OnClick(int id)
     {
 
     }
 }
+

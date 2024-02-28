@@ -392,7 +392,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1599211209
   m_SortingLayer: 3
-  m_SortingOrder: 8
+  m_SortingOrder: 7
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -12236,7 +12236,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1599211209
   m_SortingLayer: 3
-  m_SortingOrder: 7
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -19641,6 +19641,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueContainer: {fileID: 11400000, guid: e4ea653dda664c942bdd456f8377a907, type: 2}
+  isDoneTalk: 0
+  storeContent: {fileID: 11400000, guid: 145caf8646e603a45839d0742d0c823c, type: 2}
 --- !u!61 &1524754061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46555,11 +46557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7139459757000747979, guid: b2d50461680829d4f93c565c1b2d06ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.89
+      value: 6.76
       objectReference: {fileID: 0}
     - target: {fileID: 7139459757000747979, guid: b2d50461680829d4f93c565c1b2d06ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.4
+      value: -3.74
       objectReference: {fileID: 0}
     - target: {fileID: 7679221645429824360, guid: b2d50461680829d4f93c565c1b2d06ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46657,6 +46659,10 @@ PrefabInstance:
     - target: {fileID: 6194480232298882560, guid: 8f9f4ae26393d3b4b95e6558c26d9ab8, type: 3}
       propertyPath: m_Name
       value: ObjectSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062004117610580920, guid: 8f9f4ae26393d3b4b95e6558c26d9ab8, type: 3}
+      propertyPath: spawner.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
