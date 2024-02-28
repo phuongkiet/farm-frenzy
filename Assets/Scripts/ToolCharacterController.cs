@@ -108,7 +108,7 @@ public class ToolCharacterController : MonoBehaviour
             }
             if (item.onTileMapAction == null) { return; }
 
-            animator.SetTrigger("actPlow");
+            animator.SetTrigger("plow act");
             bool complete = item.onTileMapAction.OnApplyToTileMap(selectedTilePosition, controller, item);
             if (complete == true)
             {
@@ -131,7 +131,7 @@ public class ToolCharacterController : MonoBehaviour
             }
             if (item.onTileMapAction == null) { return; }
 
-            animator.SetTrigger("act");
+            animator.SetTrigger("water act");
             bool complete = item.onTileMapAction.OnApplyToTileMap(selectedTilePosition, controller, item);
             if (complete == true)
             {
