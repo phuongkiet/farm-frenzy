@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 [RequireComponent(typeof(TimeAgent))]
 public class ItemSpawner : MonoBehaviour
@@ -16,7 +15,7 @@ public class ItemSpawner : MonoBehaviour
         TimeAgent timeAgent = GetComponent<TimeAgent>();
         timeAgent.onTimeTick += Spawn;
     }
-    void Spawn()
+    void Spawn(DayTimeController dayTimeController)
     {
         if(UnityEngine.Random.value < probability)
         {

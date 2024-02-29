@@ -19,3 +19,8 @@ MonoBehaviour:
   onTileMapAction: {fileID: 0}
   onTileAction: {fileID: 0}
   onItemUsed: {fileID: 0}
+  crop: {fileID: 0}
+  iconHighlight: 0
+  itemPrefabs: {fileID: 0}
+  price: 100
+  isSell: 1

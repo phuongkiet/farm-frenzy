@@ -22,3 +22,5 @@ MonoBehaviour:
   crop: {fileID: 11400000, guid: 4addb07eaaf51a44b847d2d342a4cb84, type: 2}
   iconHighlight: 0
   itemPrefabs: {fileID: 0}
+  price: 50
+  isSell: 1

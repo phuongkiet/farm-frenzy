@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CraftingButton : MonoBehaviour, IPointerClickHandler
+public class CraftingButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Image icon;
     [SerializeField] Text text;
@@ -13,6 +13,7 @@ public class CraftingButton : MonoBehaviour, IPointerClickHandler
     [SerializeField] Text ingridientText;
 
     public ItemSlot item;
+    public CraftingRecipe currentRecipe;
 
     int myIndex;
 
@@ -21,8 +22,14 @@ public class CraftingButton : MonoBehaviour, IPointerClickHandler
         myIndex = index;
     }
 
+    public void SetRecipe(CraftingRecipe recipe)
+    {
+        currentRecipe = recipe;
+    }
+
     public void Set(ItemSlot slot)
     {
+        item = slot;
         icon.gameObject.SetActive(true);
         icon.sprite = slot.item.icon;
 
@@ -56,13 +63,57 @@ public class CraftingButton : MonoBehaviour, IPointerClickHandler
         highlight.gameObject.SetActive(b);
     }
 
-    public void ShowIngridient()
+    public void ShowIngredient(string ingredientInfo)
     {
-        Show(item);
+        if (!string.IsNullOrEmpty(ingredientInfo))
+        {
+            ingridientText.text = ingredientInfo;
+        }
+        else
+        {
+            ingridientText.text = "N/A";
+        }
     }
 
-    public void Show(ItemSlot slot)
+    public void UnShowIngridient()
     {
-        ingridientText.text = slot.item.Name;
+        ingridientText.text = null;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        UnShowIngridient();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (currentRecipe != null && myIndex >= 0)
+        {
+            Debug.Log("currentRecipe.elements.Count: " + currentRecipe.elements.Count);
+
+            // Initialize an empty string to store ingredient information
+            string ingredientsInfo = "";
+
+            // Loop through each element in the recipe
+            foreach (var element in currentRecipe.elements)
+            {
+                if (element.item != null)
+                {
+                    // Concatenate ingredient information
+                    ingredientsInfo += "x " + element.count + " " + element.item.Name + "\n";
+                }
+                else
+                {
+                    ingredientsInfo += "N/A\n";
+                }
+            }
+
+            // Show the concatenated ingredient information
+            ShowIngredient(ingredientsInfo);
+        }
+        else
+        {
+            Debug.LogError("Invalid index or recipe. Recipe: " + (currentRecipe != null ? "not null" : "null") + ", myIndex: " + myIndex + ", elements count: " + (currentRecipe != null ? currentRecipe.elements.Count.ToString() : "N/A"));
+        }
     }
 }

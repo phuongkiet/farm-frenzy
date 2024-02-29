@@ -173,14 +173,35 @@ TextureImporter:
         width: 90
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 93cf5e2615012bb47a119c11c5df3e35
       internalID: 2092030203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gold
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 165
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2be4742639e1f6408a2dade70f203e3
+      internalID: 30677274
       vertices: []
       indices: 
       edges: []
@@ -197,6 +218,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Clock: -1727451824
+      Gold: 30677274
       Portrait: 1160266742
       Sprite sheet for Basic Pack_0: 2092030203
   mipmapLimitGroupName: 

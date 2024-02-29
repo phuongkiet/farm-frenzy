@@ -48,6 +48,7 @@ public class CropTile
 public class CropsManager : MonoBehaviour
 {
     public TilemapCropsManager cropsManager;
+    public CropsContainer cropsContainer;
     public void PickUp(Vector3Int position)
     {
         if(cropsManager == null) 
@@ -96,5 +97,14 @@ public class CropsManager : MonoBehaviour
             return;
         }
         cropsManager.Water(position);
+    }
+
+    public List<CropTile> GetAllCropTiles()
+    {
+        if (cropsContainer != null)
+        {
+            return cropsContainer.GetAllCropTiles();
+        }
+        return new List<CropTile>();
     }
 }
