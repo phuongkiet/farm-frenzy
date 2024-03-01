@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum WeatherStates
 {
@@ -15,6 +16,7 @@ public class WeatherManager : TimeAgent
 
     public WeatherStates currentState = WeatherStates.Clear;
     public CropsManager cropsManager;
+    public SceneManager sceneManager;
 
     [SerializeField] ParticleSystem rainSystem;
 
@@ -41,13 +43,20 @@ public class WeatherManager : TimeAgent
 
     private void ChangeWeather(WeatherStates newWeatherState)
     {
-        currentState = newWeatherState;
-        Debug.Log(currentState);
-        UpdateWeather();
-
-        if (currentState == WeatherStates.Rainy) 
+        if(SceneManager.GetActiveScene().name == "MainScene")
         {
-            WaterAllCrops(); 
+            currentState = newWeatherState;
+            Debug.Log(currentState);
+            UpdateWeather();
+
+            if (currentState == WeatherStates.Rainy)
+            {
+                WaterAllCrops();
+            }
+        }
+        else
+        {
+            rainSystem.Stop();
         }
     }
 

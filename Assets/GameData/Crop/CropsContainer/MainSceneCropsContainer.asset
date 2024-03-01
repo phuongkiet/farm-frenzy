@@ -18,12 +18,5 @@ MonoBehaviour:
     crop: {fileID: 0}
     spriteRenderer: {fileID: 0}
     damage: 0
-    position: {x: -2, y: -1, z: 0}
-    isWatered: 0
-  - growTimer: 6
-    growStage: 1
-    crop: {fileID: 11400000, guid: a402cb09a3e9c2744adc8ca500cb71ef, type: 2}
-    spriteRenderer: {fileID: 0}
-    damage: 0.38000003
-    position: {x: -3, y: -1, z: 0}
+    position: {x: 0, y: 0, z: 0}
     isWatered: 0

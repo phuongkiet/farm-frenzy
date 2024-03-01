@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wood Pile
   m_EditorClassIdentifier: 
   Name: Wood Pile
+  id: 10
   stackable: 1
   icon: {fileID: 751135680, guid: 66545edff26c11d4890ed676a954ddb9, type: 3}
   onAction: {fileID: 0}
@@ -20,3 +21,7 @@ MonoBehaviour:
   onTileAction: {fileID: 0}
   onItemUsed: {fileID: 0}
   crop: {fileID: 0}
+  iconHighlight: 0
+  itemPrefabs: {fileID: 0}
+  price: 100
+  isSell: 0
