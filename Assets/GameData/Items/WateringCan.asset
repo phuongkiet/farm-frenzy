@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WateringCan
   m_EditorClassIdentifier: 
   Name: Watering Can
+  id: 2
   stackable: 0
   icon: {fileID: -18300346, guid: 371bba27a324d7e49b24f97d26f761bd, type: 3}
   onAction: {fileID: 0}
@@ -22,3 +23,5 @@ MonoBehaviour:
   crop: {fileID: 0}
   iconHighlight: 0
   itemPrefabs: {fileID: 0}
+  price: 100
+  isSell: 0

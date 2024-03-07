@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-
 public class ItemSlot
 {
     public Item item;
@@ -34,6 +33,15 @@ public class ItemContainer : ScriptableObject
 {
     public List<ItemSlot> slots;
     public bool isDirty;
+
+    internal void Init()
+    {
+        slots = new List<ItemSlot>();
+        for (int i = 0; i < 20; i++)
+        {
+            slots.Add(new ItemSlot());
+        }
+    }
 
     public void Add(Item item, int count = 1)
     {
@@ -114,4 +122,6 @@ public class ItemContainer : ScriptableObject
 
         return true;
     }
+
+    
 }

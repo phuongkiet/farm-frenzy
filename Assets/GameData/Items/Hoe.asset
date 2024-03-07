@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a243705e7ef34e94c9fcba8fb71c3ff6, type: 3}
   m_Name: Hoe
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Hoe
+  id: 1
   stackable: 0
   icon: {fileID: 1754965639, guid: 371bba27a324d7e49b24f97d26f761bd, type: 3}
   onAction: {fileID: 0}
   onTileMapAction: {fileID: 11400000, guid: 5f442b65de784e64ea93a7a9ead4ff58, type: 2}
+  onTileAction: {fileID: 0}
+  onItemUsed: {fileID: 0}
+  crop: {fileID: 0}
+  iconHighlight: 0
+  itemPrefabs: {fileID: 0}
+  price: 100
+  isSell: 0

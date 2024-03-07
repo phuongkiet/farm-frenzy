@@ -28,6 +28,7 @@ public class DayTimeController : MonoBehaviour
 {
     const float secondsInDay = 86400f;
     const float phaseLength = 900f; // 15 minute chunk of time 
+    const float phaseInDay = 96f;
 
     [SerializeField] Color nightLightColor;
     [SerializeField] AnimationCurve nightTimeCurve;
@@ -132,19 +133,27 @@ public class DayTimeController : MonoBehaviour
         return Hours >= 5f;
     }
 
-    int oldPhase = 0;
+    int oldPhase = -1;
     private void TimeAgents()
     {
-        int currentPhase = (int)(time / phaseLength);
-
-        if (oldPhase != currentPhase)
+        if(oldPhase == -1)
         {
-            oldPhase = currentPhase;
+            oldPhase = CalculatePhase();
+        }
+        int currentPhase = CalculatePhase();
+        while(oldPhase < currentPhase)
+        {
+            oldPhase += 1;
             for (int i = 0; i < timeAgent.Count; i++)
             {
                 timeAgent[i].Invoke(this);
             }
         }
+    }
+
+    private int CalculatePhase()
+    {
+        return (int)(time / phaseLength) + (int)(days * phaseInDay);
     }
 
     private void DayLight()
@@ -164,7 +173,7 @@ public class DayTimeController : MonoBehaviour
 
     private void NextDay()
     {
-        time = 0;
+        time -= secondsInDay;
         days += 1;
         UpdateDate();
         int dayNum = (int)dayOfWeek;
@@ -220,5 +229,30 @@ public class DayTimeController : MonoBehaviour
     private void UpdateDateText()
     {
         dayOfWeekText.text = dayOfWeek.ToString();
+    }
+
+    public void SkipTime(float second = 0, float minute = 0, float hour = 0) 
+    {
+        float timeToSkip = second;
+        timeToSkip += minute * 60f;
+        timeToSkip += hour * 3600f;
+
+        time += timeToSkip;
+    }
+
+    public void SkipToMorning()
+    {
+        float secondToSkip = 0f;
+
+        if(time > startAtTime)
+        {
+            secondToSkip += secondsInDay - time + startAtTime;
+        }
+        else
+        {
+            secondToSkip += startAtTime - time;
+        }
+
+        SkipTime(secondToSkip);
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7b2a6dd1c55024ab1a3ba15a4a4282, type: 3}
   m_Name: WaterDirt
   m_EditorClassIdentifier: 
+  energyCost: 5
   canWater:
   - {fileID: 11400000, guid: 8afb684941505884db888858ba9335b9, type: 2}
   - {fileID: 11400000, guid: 7ec5178cb52b19447a521666f87a9132, type: 2}

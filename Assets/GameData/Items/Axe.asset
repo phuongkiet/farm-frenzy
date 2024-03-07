@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a243705e7ef34e94c9fcba8fb71c3ff6, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Axe
+  id: 0
   stackable: 0
   icon: {fileID: 2070543083, guid: 371bba27a324d7e49b24f97d26f761bd, type: 3}
   onAction: {fileID: 11400000, guid: 7990bc15ec6e69342984608924648d41, type: 2}
+  onTileMapAction: {fileID: 0}
+  onTileAction: {fileID: 0}
+  onItemUsed: {fileID: 0}
+  crop: {fileID: 0}
+  iconHighlight: 0
+  itemPrefabs: {fileID: 0}
+  price: 100
+  isSell: 0

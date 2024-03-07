@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WheatSeed
   m_EditorClassIdentifier: 
   Name: Wheat Seed
+  id: 6
   stackable: 1
   icon: {fileID: -1768800443, guid: 6ab3659b3650ab24992df735e5f12888, type: 3}
   onAction: {fileID: 0}
