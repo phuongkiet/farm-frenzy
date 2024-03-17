@@ -8,6 +8,22 @@ using UnityEngine.UI;
 public class Crafting : MonoBehaviour
 {
     [SerializeField] ItemContainer inventory;
+
+    private void Start()
+    {
+        if (inventory == null)
+        {
+            InitInventory();
+        }
+        
+    }
+
+    private void InitInventory()
+    {
+        inventory = (ItemContainer)ScriptableObject.CreateInstance(typeof(ItemContainer));
+        inventory.InitInventory();
+    }
+
     public void Craft(CraftingRecipe recipe)
     {
         

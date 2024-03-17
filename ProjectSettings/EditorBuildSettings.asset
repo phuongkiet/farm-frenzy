@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoadScene.unity
     guid: 7e4dca4e97605964eae5763f0fa39529
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HouseScene.unity
     guid: 7f5032fd4f2186b4aacd98d838924c24
   - enabled: 1

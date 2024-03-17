@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemToolBarPanel : ItemPanel
 {
     [SerializeField] ToolBarController controller;
+    [SerializeField] Text toolName;
 
     private void Start()
     {
@@ -25,5 +27,15 @@ public class ItemToolBarPanel : ItemPanel
         buttons[currentSelectedTool].Highlight(false);
         currentSelectedTool = id;
         buttons[currentSelectedTool].Highlight(true);
+        Item selectedItem = controller.GetItem;
+
+        if (selectedItem != null)
+        {
+            toolName.text = selectedItem.Name; 
+        }
+        else
+        {
+            toolName.text = "";
+        }
     }
 }

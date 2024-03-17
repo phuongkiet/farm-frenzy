@@ -12,8 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df0c8abe88317840b50a0b1aa69f3e5, type: 3}
   m_Name: MainScene Objects Container
   m_EditorClassIdentifier: 
-  placeableObjects:
-  - item: {fileID: 11400000, guid: 4396b603059ffbb41986e9e29c22dd62, type: 2}
-    targetObject: {fileID: 0}
-    positionOnGrid: {x: -15, y: -2, z: 0}
-    objectState: '{"saveLootItemData":[{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0},{"itemId":-1,"count":0}]}'
+  placeableObjects: []

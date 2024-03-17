@@ -31,6 +31,10 @@ public class Transition : MonoBehaviour
                 toTransition.position = new Vector3(destination.position.x, destination.position.y, toTransition.position.z); 
                 break;
             case TransitionType.Scene:
+                if (cameraConfiner != null)
+                {
+                    cameraConfiner.UpdateBounds(confiner);
+                }
                 GameSceneManager.instance.InitSwitchScene(sceneNameToTransition, targettPosition);
                 break;
         }

@@ -117,7 +117,7 @@ public class ToolCharacterController : MonoBehaviour
                 return;
             }
             if (item.onTileMapAction == null) { return; }
-            EnergyCost(item.onAction.energyCost);
+            EnergyCost(item.onTileMapAction.energyCost);
             animator.SetTrigger("plow act");
             bool complete = item.onTileMapAction.OnApplyToTileMap(selectedTilePosition, controller, item);
             if (complete == true)
@@ -140,7 +140,7 @@ public class ToolCharacterController : MonoBehaviour
                 return;
             }
             if (item.onTileMapAction == null) { return; }
-            EnergyCost(item.onAction.energyCost);
+            EnergyCost(item.onTileMapAction.energyCost);
             animator.SetTrigger("water act");
             bool complete = item.onTileMapAction.OnApplyToTileMap(selectedTilePosition, controller, item);
             if (complete == true)

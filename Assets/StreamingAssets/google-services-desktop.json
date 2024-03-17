@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "201799837858",
+    "firebase_url": "https://farm-frenzy-b920a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "farm-frenzy-b920a",
+    "storage_bucket": "farm-frenzy-b920a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201799837858:android:40009900c0766319f84ffb",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.FarmFrenzy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHd46LJyPVWLlI-K_GOABlt4hiways9AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201799837858:android:1b30cbd993db9bc8f84ffb",
+        "android_client_info": {
+          "package_name": "com.company.farmfrenzy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHd46LJyPVWLlI-K_GOABlt4hiways9AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

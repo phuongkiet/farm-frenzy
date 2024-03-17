@@ -8,13 +8,23 @@ public class ItemPanel : MonoBehaviour
     public List<InventoryButton> buttons;
     private void Start()
     {
+        if (inventory == null)
+        {
+            InitInventory();
+        }
         Init();
+        
     }
 
     public void Init()
     {
         SetIndex();
         Show();
+    }
+    private void InitInventory()
+    {
+        inventory = (ItemContainer)ScriptableObject.CreateInstance(typeof(ItemContainer));
+        inventory.InitInventory();
     }
 
     private void OnEnable()

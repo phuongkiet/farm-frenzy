@@ -8,16 +8,29 @@ public class Trading : MonoBehaviour
     [SerializeField] GameObject storePanel;
     TalkInteract talkInteract;
 
-    Currency currency;
 
     ItemStorePanel itemStorePanel;
     [SerializeField] ItemContainer playerItemContainer;
     [SerializeField] ItemPanel itemPanel;
-    [SerializeField] GameObject toolBarPanel;   
+    [SerializeField] GameObject toolBarPanel;
+
+    private void Start()
+    {
+        if (playerItemContainer == null)
+        {
+            InitInventory();
+        }
+
+    }
+
+    private void InitInventory()
+    {
+        playerItemContainer = (ItemContainer)ScriptableObject.CreateInstance(typeof(ItemContainer));
+        playerItemContainer.InitInventory();
+    }
 
     private void Awake()
     {
-        currency = GetComponent<Currency>();
         if (storePanel != null)
         {
             itemStorePanel = storePanel.GetComponent<ItemStorePanel>();
@@ -59,9 +72,11 @@ public class Trading : MonoBehaviour
         {
             ItemSlot itemToSell = GameManager.Instance.dragAndDropController.itemSlot;
             int moneyGain = itemToSell.item.stackable == true ? itemToSell.item.price * itemToSell.count : itemToSell.item.price;
-            currency.Add(moneyGain);
+            GameManager.Instance.currencyReferenceManager.CurrencyManager.currency.Add(moneyGain);
+            GameManager.Instance.playerDataManager.PlayerData.money.Add(moneyGain);
             itemToSell.Clear();
             GameManager.Instance.dragAndDropController.UpdateIcon();
+            CurrencyDisplay.Instance.UpdateText();
         }
     }
 
@@ -69,11 +84,13 @@ public class Trading : MonoBehaviour
     {
         Item itemToBuy = talkInteract.storeContent.slots[id].item;
         int totalPrice = itemToBuy.price;
-        if(currency.Check(totalPrice) == true)
+        if(GameManager.Instance.currencyReferenceManager.CurrencyManager.currency.Check(totalPrice) == true)
         {
-            currency.Decrease(totalPrice);
+            GameManager.Instance.currencyReferenceManager.CurrencyManager.currency.Decrease(totalPrice);
+            GameManager.Instance.playerDataManager.PlayerData.money.Decrease(totalPrice);
             playerItemContainer.Add(itemToBuy);
             itemPanel.Show();
+            CurrencyDisplay.Instance.UpdateText();
         }
     }
 }

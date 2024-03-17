@@ -19,12 +19,12 @@ MonoBehaviour:
     count: 0
   - item: {fileID: 11400000, guid: 7bdc0601eab887f4aa6fc9d36b20f96e, type: 2}
     count: 0
-  - item: {fileID: 11400000, guid: 7dc8799ba2c0cce4ea4b3e44f3f13e04, type: 2}
-    count: 6
-  - item: {fileID: 11400000, guid: 9b033b81f4c1c9042a7e91c1a8627a07, type: 2}
-    count: 5
-  - item: {fileID: 11400000, guid: f75eff5c288189446b71f4a49c935ef3, type: 2}
-    count: 15
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
   - item: {fileID: 0}
     count: 0
   - item: {fileID: 0}
