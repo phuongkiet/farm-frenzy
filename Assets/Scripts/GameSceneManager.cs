@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class GameSceneManager : MonoBehaviour
     string currentScene;
     AsyncOperation unload;
     AsyncOperation load;
+
+    bool respawn;
 
     // Start is called before the first frame update
     void Start()
@@ -49,9 +52,37 @@ public class GameSceneManager : MonoBehaviour
         load = SceneManager.LoadSceneAsync(to, LoadSceneMode.Additive);
         unload = SceneManager.UnloadSceneAsync(currentScene);
         currentScene = to;
+        MoveCharacter(targettPosition);
+
+    }
+
+    private void MoveCharacter(Vector3 targettPosition)
+    {
         Transform playerTransform = GameManager.Instance.player.transform;
         Cinemachine.CinemachineBrain currentCamera = Camera.main.GetComponent<Cinemachine.CinemachineBrain>();
         currentCamera.ActiveVirtualCamera.OnTargetObjectWarped(playerTransform, targettPosition - playerTransform.position);
         playerTransform.position = new Vector3(targettPosition.x, targettPosition.y, playerTransform.position.z);
+        if (respawn)
+        {
+            playerTransform.GetComponent<Character>().FullRest();
+            playerTransform.GetComponent<DisableControls>().EnableControl();
+            respawn = false;
+        }
+    }
+
+    internal IEnumerator Respawn(Vector3 respawnPosition, string respawnSceneName)
+    {
+        respawn = true;
+        if(currentScene != respawnSceneName)
+        {
+            InitSwitchScene(respawnSceneName, respawnPosition);
+        }
+        else
+        {
+            GameManager.Instance.screenTint.Tint();
+            yield return new WaitForSeconds(2);
+            MoveCharacter(respawnPosition);
+            GameManager.Instance.screenTint.UnTint();
+        }
     }
 }

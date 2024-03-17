@@ -40,10 +40,12 @@ public class Character : MonoBehaviour
     public bool isExhausted;
     [SerializeField] Status status;
     DisableControls disableControls;
+    PlayerRespawn playerRespawn;
 
     private void Awake()
     {
         disableControls = GetComponent<DisableControls>();
+        playerRespawn = GetComponent<PlayerRespawn>();
     }
 
     private void Start()
@@ -58,12 +60,20 @@ public class Character : MonoBehaviour
 
     public void GetTired(int amount)
     {
+        if(isExhausted == true) { return; }
         stamina.Subtract(amount);
-        if(stamina.curVal < 0)
+        if(stamina.curVal <= 0)
         {
-            isExhausted = true;
+            Exhausted();
         }
         UpdateStamina();
+    }
+
+    private void Exhausted()
+    {
+        isExhausted = true;
+        disableControls.DisableControl();
+        playerRespawn.StartRespawn();
     }
 
     public void Rest(int amount)

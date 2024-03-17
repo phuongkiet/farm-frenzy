@@ -47,4 +47,9 @@ public class CharacterController2D : MonoBehaviour
     {
         rigidbody2D.velocity = motionVector * speed;
     }
+
+    private void OnDisable()
+    {
+        rigidbody2D.velocity = Vector2.zero;
+    }
 }
